@@ -857,9 +857,29 @@ require('lazy').setup({
       vim.cmd.hi 'Comment gui=none'
     end,
   },
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  -- Highlight todo, notes, DICK:, etc in comments
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      keywords = {
+        PENIS = {
+          icon = '󰢺 ',
+          color = 'error',
+          alt = { 'DICK', 'PEEPEE', 'COCK' },
+        },
+        POOP = {
+          icon = '󰇷 ',
+          color = 'hint',
+          alt = { 'POOPY', 'SHIT' },
+        },
+      },
+      highlight = {
+        comments_only = false,
+      },
+    },
+  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
